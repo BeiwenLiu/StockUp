@@ -29,5 +29,7 @@ def service1(stockName, percentchange, dayrange):
                     tempSum.append(drvalues[x + y])
                 total.append(sum(tempSum))
                 
+    avg = sum(total)/len(total)
+    print avg, counter
     
-service1("AAPL", -.1, 20)
+service1("TWTR", -.01, 50)
