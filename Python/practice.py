@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 
 def service1(stockName, percentchange, dayrange): 
     df = quandl.get("YAHOO/{}".format(stockName), authtoken="p69UHReX9R_5Gr1hKavd")
+    print df
     df.drop(df.columns[[0,1,2,3,4]], axis=1, inplace=True)
     
     df['Daily Return'] = (df / df.shift(1)) - 1
@@ -28,7 +29,5 @@ def service1(stockName, percentchange, dayrange):
                     tempSum.append(drvalues[x + y])
                 total.append(sum(tempSum))
                 
-    print sum(total)/len(total)
-    print counter
     
 compute("AAPL", -.1, 20)
